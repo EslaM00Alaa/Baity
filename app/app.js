@@ -4,7 +4,6 @@ const rateLimit = require("express-rate-limit");
 const path = require("path"); // ✅ Fixed import
 
 const AuthRoutes = require("./modules/user/user.route");
-const HotelRoutes = require("./modules/hotel/hotel.routes");
 
 const app = express();
 
@@ -28,7 +27,6 @@ app.use("/uploads", express.static(path.join("./uploads")));
 
 // Routes
 app.use("/api", AuthRoutes);
-app.use("/api", HotelRoutes);
 
 app.get("/", (req, res) => {
   res.send("Hello, Express with MongoDB!");
